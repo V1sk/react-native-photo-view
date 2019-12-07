@@ -4,8 +4,6 @@ import android.content.Context;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.util.Log;
 import android.view.View;
 import com.facebook.drawee.backends.pipeline.PipelineDraweeControllerBuilder;
 import com.facebook.drawee.controller.BaseControllerListener;
@@ -56,8 +54,7 @@ public class PhotoView extends PhotoDraweeView {
         super(context);
     }
 
-    public void setSource(@Nullable ReadableMap source,
-                          @NonNull ResourceDrawableIdHelper resourceDrawableIdHelper) {
+    public void setSource(@Nullable ReadableMap source,ResourceDrawableIdHelper resourceDrawableIdHelper) {
         mUri = null;
         if (source != null) {
             String uri = source.getString("uri");
@@ -140,7 +137,7 @@ public class PhotoView extends PhotoDraweeView {
         mIsDirty = true;
     }
 
-    public void maybeUpdateView(@NonNull PipelineDraweeControllerBuilder builder) {
+    public void maybeUpdateView(PipelineDraweeControllerBuilder builder) {
         if (!mIsDirty) {
             return;
         }
